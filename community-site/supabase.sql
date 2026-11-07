@@ -1,4 +1,4 @@
--- Run this once in Supabase > SQL Editor.
+-- Run this once in Supabase > SQL Editor .
 -- Replace ADMIN_EMAIL (3 places below, search & replace) with the email you will log in with.
 
 create table if not exists posts (
