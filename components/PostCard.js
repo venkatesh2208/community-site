@@ -13,6 +13,7 @@ export default function PostCard({ post, onDelete }) {
       <div className="post-meta">
         <span className={`tag tag-${post.type}`}>{LABELS[post.type]}</span>
         <time>{date}</time>
+        {post.visibility === 'members' && <span className="tag tag-members">Members only</span>}
       </div>
       <h2>{post.title}</h2>
 

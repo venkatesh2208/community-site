@@ -8,7 +8,7 @@ const serif = Noto_Serif({ subsets: ['latin'], variable: '--font-serif', display
 
 export const metadata = {
   title: SITE_NAME,
-  description: 'News, photos, videos and stories from our Brundavanam Totalu.',
+  description: 'News, photos, videos and stories from our community.',
 };
 
 export default function RootLayout({ children }) {
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         </header>
         <main>{children}</main>
         <footer className="foot">
-          <a href="/admin">Admin</a>
+          <a href="/admin">Sign in</a>
         </footer>
       </body>
     </html>

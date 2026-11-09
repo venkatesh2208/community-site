@@ -85,3 +85,16 @@ h1 { font-family: var(--font-serif), serif; margin: 8px 0 16px; }
   .weather { text-align: left; }
   .weather-row { justify-content: flex-start; }
 }
+
+/* users & permissions */
+.tag-members { background: transparent; border: 1px solid var(--muted); color: var(--muted); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-bottom: 14px; }
+.card h3 { margin: 0 0 4px; font-family: var(--font-serif), serif; }
+.user { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
+.user-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.user-actions select { font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--ink); }
+.user-actions button:disabled, .user-actions select:disabled { opacity: .45; cursor: not-allowed; }
+.btn-danger { margin-top: 0; }
+.roles { padding-left: 18px; }
+@media (max-width: 520px) { .two { grid-template-columns: 1fr; } }

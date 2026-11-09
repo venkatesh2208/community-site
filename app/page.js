@@ -17,15 +17,21 @@ export default function Home() {
   const [state, setState] = useState('loading');
 
   useEffect(() => {
-    supabase
-      .from('posts')
-      .select('*')
-      .order('created_at', { ascending: false })
-      .then(({ data, error }) => {
-        if (error) return setState('error');
-        setPosts(data);
-        setState('ready');
-      });
+    function load() {
+      supabase
+        .from('posts')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .then(({ data, error }) => {
+          if (error) return setState('error');
+          setPosts(data);
+          setState('ready');
+        });
+    }
+    load();
+    // Reload when someone signs in or out, so members see members-only posts
+    const { data: sub } = supabase.auth.onAuthStateChange(() => load());
+    return () => sub.subscription.unsubscribe();
   }, []);
 
   const shown = filter === 'all' ? posts : posts.filter((p) => p.type === filter);
